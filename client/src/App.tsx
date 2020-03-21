@@ -1,9 +1,16 @@
 import React from 'react';
+import { ClientContextProvider, createClient } from 'react-fetching-library';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import QuestionList from './pages/question-list';
 
 const App = () => (
-  <div>
-    <h1>#WirVsVirus Student Q&amp;A</h1>
-  </div>
+  <ClientContextProvider client={createClient({})}>
+    <BrowserRouter>
+    <Switch>
+      <Route exact path="/questions" component={QuestionList} />
+    </Switch>
+    </BrowserRouter>
+  </ClientContextProvider>
 );
 
 export default App;
