@@ -1,12 +1,9 @@
 import express from 'express';
 import config from './config';
+import api from './api';
 
-const main = async () => {
-  const app = express();
+const app = express();
 
-  app.get('/api/test', (req, res) => res.json({ test: 'TEST' }));
+app.use('/api', api);
 
-  app.listen(config.port, () => console.log(`App listening at http://localhost:${config.port}`));
-};
-
-main();
+app.listen(config.port, () => console.log(`App listening at http://localhost:${config.port}`));
