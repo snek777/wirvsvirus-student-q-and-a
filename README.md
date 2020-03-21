@@ -1,4 +1,4 @@
-# #WeVsVirus Student Q&A
+# Expert\*innen helfen Schüler\*innen - #WeVsVirus
 
 ## Running in dev mode
 
