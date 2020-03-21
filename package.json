@@ -1,0 +1,27 @@
+{
+  "name": "wirvsvirusstudentqa",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "npm run build-server && npm run build-client && mv client/build build/static",
+    "build-client": "cd client && npm run build",
+    "build-server": "rm -rf build && tsc",
+    "dev": "concurrently --kill-others-on-fail \"npm run dev-server\" \"npm run dev-client\"",
+    "dev-client": "cd client && npm run dev",
+    "dev-server": "ts-node-dev src",
+    "start": "node build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ricki-BumbleDev/wirvsvirus-student-q-and-a.git"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.3",
+    "concurrently": "^5.1.0",
+    "ts-node-dev": "^1.0.0-pre.44",
+    "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
